@@ -4,17 +4,18 @@ Este proyecto contiene implementaciones de diversas estructuras de datos en Rust
 
 ## 📚 Estructuras de datos implementadas
 
-- Listas enlazadas (simples y dobles)
+- Listas enlazadas
 - Pilas (Stacks)
 - Colas (Queues)
 - Árboles binarios
 - Grafos
 - Tablas hash
+- Array
 
 ## 🚀 Ejecución
 
 Para compilar y ejecutar cualquier estructura de datos, utiliza el siguiente comando:
 
 ```bash
-cargo run --bin <nombre_del_binario>
+cargo run
 

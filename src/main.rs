@@ -11,12 +11,12 @@ use hash::HashMap;
 use tree::BinaryTree;
 
 fn main() {
-    //test_array();
-    //test_graph();
-    //test_linked_list();
-    //test_hash();
-    //test_tree();
-    //test_stack();
+    test_array();
+    test_graph();
+    test_linked_list();
+    test_hash();
+    test_tree();
+    test_stack();
     test_queue();
 }
 
