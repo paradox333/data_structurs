@@ -3,6 +3,8 @@ mod graph;
 mod linked_lists;
 mod hash;
 mod tree;
+mod stack;
+use stack::Stack;
 use hash::HashMap;
 use tree::BinaryTree;
 
@@ -11,7 +13,28 @@ fn main() {
     //test_graph();
     //test_linked_list();
     //test_hash();
-    test_tree();
+    //test_tree();
+    test_stack();
+}
+
+fn test_stack(){
+    let mut stack = Stack::new();
+    println!("is empty? {}", stack.is_empty());
+    stack.push(3);
+    let top = stack.top().take().unwrap();
+    println!("Current top: {}", top);
+    stack.pop();
+    stack.push(1);
+    stack.push(2);
+    let top = stack.top().take().unwrap();
+    println!("Current top: {}", top);
+    println!("is empty? {}", stack.is_empty());
+    stack.pop();
+    let top = stack.top().take().unwrap();
+    println!("current top: {}", top);
+    stack.pop();
+    let top = stack.top().take();
+    println!("current top: {:?}", top);
 }
 
 fn test_tree(){
