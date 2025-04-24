@@ -2,12 +2,46 @@ mod array;
 mod graph;
 mod linked_lists;
 mod hash;
+mod tree;
 use hash::HashMap;
+use tree::BinaryTree;
+
 fn main() {
     //test_array();
     //test_graph();
     //test_linked_list();
     //test_hash();
+    test_tree();
+}
+
+fn test_tree(){
+    let primes: Vec<usize> = vec![
+        19, 107, 41, 29, 109, 11, 67, 
+        31, 3, 103, 73, 127, 43, 47, 
+        83, 5, 17, 89, 59, 101, 79, 
+        113, 71, 23, 97, 61, 13, 7, 
+        2, 53, 137, 131, 37
+    ];
+    let mut binary_tree: BinaryTree = tree::BinaryTree::new();
+    println!("is empty? {:?}", binary_tree.is_empty());
+    println!("Height: {}", binary_tree.height());
+    for number in primes.iter() {
+        binary_tree.insert(*number)
+    }
+    println!("Height: {}", binary_tree.height());
+    println!("contains value 3? {}", binary_tree.contains(3));
+    println!("contains value 6? {}", binary_tree.contains(6));
+    binary_tree.remove(3);
+    println!("contains value 3? {}", binary_tree.contains(3));
+    let in_order = binary_tree.in_order();
+    println!("in order: {:?}", in_order);
+    println!("is empty? {:?}", binary_tree.is_empty());
+    println!("min: {}", binary_tree.min());
+    println!("max: {}", binary_tree.max());
+    println!("size: {}", binary_tree.size());
+    println!("clear:");
+    binary_tree.clear();
+    println!("size: {}", binary_tree.size());
 }
 
 fn test_hash(){
