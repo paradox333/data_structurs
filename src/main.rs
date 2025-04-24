@@ -4,6 +4,8 @@ mod linked_lists;
 mod hash;
 mod tree;
 mod stack;
+mod queue;
+use queue::Queue;
 use stack::Stack;
 use hash::HashMap;
 use tree::BinaryTree;
@@ -14,7 +16,27 @@ fn main() {
     //test_linked_list();
     //test_hash();
     //test_tree();
-    test_stack();
+    //test_stack();
+    test_queue();
+}
+
+fn test_queue(){
+    println!("---------Creating Queue---------");
+    let mut queue = Queue::new();
+    println!("Length: {}", queue.len());
+    println!("Is empty? {}", queue.is_empty());
+    println!("Add 3:");
+    queue.enqueue(3);
+    println!("Add 2:");
+    queue.enqueue(2);
+    if let Some(value) = queue.dequeue() {
+        println!("Value removed: {}", value);
+    } else {
+        println!("Not found value");
+    }
+    println!("Is empty? {}", queue.is_empty());
+    println!("Peek: {}", queue.peek());
+    println!("Length: {}", queue.len());
 }
 
 fn test_stack(){
