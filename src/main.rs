@@ -21,6 +21,7 @@ fn main() {
 }
 
 fn test_queue(){
+    println!("---------Test Queue---------");
     println!("---------Creating Queue---------");
     let mut queue = Queue::new();
     println!("Length: {}", queue.len());
@@ -40,6 +41,7 @@ fn test_queue(){
 }
 
 fn test_stack(){
+    println!("---------Test Stack---------");
     let mut stack = Stack::new();
     println!("is empty? {}", stack.is_empty());
     stack.push(3);
@@ -60,6 +62,7 @@ fn test_stack(){
 }
 
 fn test_tree(){
+    println!("---------Test Tree---------");
     let primes: Vec<usize> = vec![
         19, 107, 41, 29, 109, 11, 67, 
         31, 3, 103, 73, 127, 43, 47, 
@@ -90,6 +93,7 @@ fn test_tree(){
 }
 
 fn test_hash(){
+    println!("---------Test Table Hash---------");
     let mut hash_map: HashMap<String, i32> = hash::HashMap::new();
     hash_map.insert("key_test_1".to_string(), 33);
     if let Some(row) = hash_map.get(&"key_test_1".to_string()) {
@@ -107,6 +111,7 @@ fn test_hash(){
 }
 
 fn test_linked_list(){
+    println!("---------Test Linked List---------");
     let mut list = linked_lists::LinkedList::new();
     println!("Is empty? {}", list.is_empty());
     list.push(2);
@@ -116,6 +121,7 @@ fn test_linked_list(){
     println!("Head value: {:?}", list.peek());
 }
 fn test_graph(){
+    println!("---------Test Graph---------");
     let mut graph = graph::Node::new(1, Vec::new());
     println!("Primer nodo id: {}", graph.id);
     let mut graph_2 = graph::Node::new(2, Vec::new());
@@ -130,6 +136,7 @@ fn test_graph(){
 }
 
 fn test_array(){
+    println!("---------Test Array---------");
     let mut arr = array::Array::new(vec![1,2,3]);
     println!("Tamaño del array: {}", arr.size());
     arr.delete(0);

@@ -45,7 +45,7 @@ impl Stack {
     }
     pub fn is_empty(&self) -> bool {
         return match &self.top {
-            Some (node) => false,
+            Some (_node) => false,
             None => true
         }
     }

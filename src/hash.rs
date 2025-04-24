@@ -39,8 +39,8 @@ where
     }
 
     pub fn insert(&mut self, key: K, value: V){
-        let key_hash = hashCalculation(&key);
-        let hash_index = hashIndex(key_hash, self.buckets.len());
+        let key_hash = hash_calculation(&key);
+        let hash_index = hash_index(key_hash, self.buckets.len());
         if let Some(bucket) = self.buckets.get_mut(hash_index) {
             // Si existe, solo insertamos el nuevo HashRow en el bucket
             bucket.push(HashRow::new(key, value));
@@ -50,8 +50,8 @@ where
     }
 
     pub fn get(&self, key: &K) -> Option<&HashRow<K, V>>{
-        let key_hash = hashCalculation(&key);
-        let hash_index = hashIndex(key_hash, self.buckets.len());
+        let key_hash = hash_calculation(&key);
+        let hash_index = hash_index(key_hash, self.buckets.len());
         // Verificamos si existe un bucket en ese índice
         if let Some(bucket) = self.buckets.get(hash_index) {
             // Buscamos el HashRow dentro del bucket donde la clave coincida
@@ -63,8 +63,8 @@ where
     }
 
     pub fn remove(&mut self, key: &K){
-        let key_hash = hashCalculation(&key);
-        let hash_index = hashIndex(key_hash, self.buckets.len());
+        let key_hash = hash_calculation(&key);
+        let hash_index = hash_index(key_hash, self.buckets.len());
         
         if let Some(bucket) = self.buckets.get_mut(hash_index) {
             // Buscamos el HashRow dentro del bucket donde la clave coincida
@@ -75,7 +75,7 @@ where
     }
 }
 
-fn hashCalculation<K>(key: K) -> u64
+fn hash_calculation<K>(key: K) -> u64
 where
     K: Hash,
 {
@@ -85,6 +85,6 @@ where
     hash_value
 }
 
-fn hashIndex(index: u64, length: usize) -> usize {
+fn hash_index(index: u64, length: usize) -> usize {
     (index as usize) % length
 }

@@ -231,7 +231,7 @@ impl BinaryTree {
 
     pub fn is_empty(&self) -> bool{
         return match &self.root {
-            Some(node) => false,
+            Some(_node) => false,
             None => true
         };
 
